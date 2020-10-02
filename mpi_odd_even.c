@@ -78,12 +78,6 @@ int main(int argc, char* argv[]) {
 }  /* main */
 
 
-/*-------------------------------------------------------------------
- * Function:   Generate_list
- * Purpose:    Fill list with random ints
- * Input Args: local_n, my_rank
- * Output Arg: local_A
- */
 void Generate_list(int local_A[], int local_n, int my_rank) {
    int i;
 
@@ -94,12 +88,7 @@ void Generate_list(int local_A[], int local_n, int my_rank) {
 }  /* Generate_list */
 
 
-/*-------------------------------------------------------------------
- * Function:  Usage
- * Purpose:   Print command line to start program
- * In arg:    program:  name of executable
- * Note:      Purely local, run only by process 0;
- */
+
 void Usage(char* program) {
    fprintf(stderr, "usage:  mpirun -np <p> %s <g|i> <global_n>\n",
        program);
@@ -112,12 +101,6 @@ void Usage(char* program) {
 }  /* Usage */
 
 
-/*-------------------------------------------------------------------
- * Function:    Get_args
- * Purpose:     Get and check command line arguments
- * Input args:  argc, argv, my_rank, p, comm
- * Output args: global_n_p, local_n_p, gi_p
- */
 void Get_args(int argc, char* argv[], int* global_n_p, int* local_n_p, 
          char* gi_p, int my_rank, int p, MPI_Comm comm) {
 
